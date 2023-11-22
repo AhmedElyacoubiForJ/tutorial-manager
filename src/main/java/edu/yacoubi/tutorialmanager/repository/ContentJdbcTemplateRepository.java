@@ -79,6 +79,11 @@ public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
     }
 
     @Override
+    public boolean existsById(Integer id) {
+        return true;
+    }
+
+    @Override
     public void update(Content content, Integer id) {
         jdbcTemplate.update(
                 "update Content set title=?, description=?, status=?, tutorial_type=?, it_layer_type=?, date_created=?, date_updated=?, url=? where id =" + id,

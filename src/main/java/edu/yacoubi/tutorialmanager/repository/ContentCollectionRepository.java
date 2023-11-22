@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+//@Repository
 public class ContentCollectionRepository implements DAO<Content, Integer>{
 
     private final List<Content> contents = new ArrayList<>();
