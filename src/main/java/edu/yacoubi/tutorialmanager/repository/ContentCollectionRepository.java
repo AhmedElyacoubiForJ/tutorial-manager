@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ContentCollectionRepository {
+public class ContentCollectionRepository implements DAO<Content>{
 
     private final List<Content> contents = new ArrayList<>();
 
@@ -30,13 +30,18 @@ public class ContentCollectionRepository {
                 .findFirst();
     }
 
-    public void save(Content content) {
+    public void update(Content content, Integer id) {
         contents.removeIf(c -> c.id().equals(content.id()));
         contents.add(content);
     }
 
+    public void create(Content content) {
+        contents.add(content);
+    }
+
     public boolean existsById(Integer id) {
-        return contents.stream().filter(c -> c.id().equals(id)).count() == 1;
+        return contents.stream()
+                .filter(c -> c.id().equals(id)).count() == 1;
     }
 
     @PostConstruct

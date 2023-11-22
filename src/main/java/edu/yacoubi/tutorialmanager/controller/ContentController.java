@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/contents")
-// @CrossOrigin for vue later
 // TODO create, read, update and delete | filter, paging and sorting
 public class ContentController {
 
@@ -44,19 +43,22 @@ public class ContentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@Valid @RequestBody Content content) {
-        repository.save(content);
+        repository.create(content);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@RequestBody Content content, @PathVariable Integer id) {
+    public void update(
+            @RequestBody Content content,
+            @PathVariable Integer id) {
+
         if(!repository.existsById(id)) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND,
                     "content not found."
             );
         }
-        repository.save(content);
+        repository.update(content, id);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

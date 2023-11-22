@@ -8,7 +8,7 @@ public record Content(
         Integer id,
         @NotBlank
         String title,
-        String desc,
+        String description,
         Status status,
         TutorialType contentTutorialType,
         ItLayerType itLayerType,
