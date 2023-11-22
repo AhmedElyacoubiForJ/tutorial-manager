@@ -16,25 +16,26 @@ import java.util.Optional;
 // TODO create, read, update and delete | filter, paging and sorting
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentCollectionRepository contentCollectionRepository;
     private final ContentJdbcTemplateRepository contentJdbcTemplateRepository;
 
-    public ContentController(ContentCollectionRepository repository,
+    public ContentController(ContentCollectionRepository contentCollectionRepository,
                              ContentJdbcTemplateRepository contentJdbcTemplateRepository) {
-        this.repository = repository;
+        this.contentCollectionRepository = contentCollectionRepository;
         this.contentJdbcTemplateRepository = contentJdbcTemplateRepository;
     }
 
     @GetMapping("")
     public List<Content> getAll() {
         return contentJdbcTemplateRepository.findAll();
-        //return repository.findAll();
+        //return contentCollectionRepository.findAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Content> getById(@PathVariable Integer id) {
         return Optional.ofNullable(
-                repository.findById(id)
+                // contentCollectionRepository.findById(id)
+                contentJdbcTemplateRepository.findById(id)
                         .orElseThrow(() -> {
                             throw new ResponseStatusException(
                                     HttpStatus.NOT_FOUND,
@@ -48,7 +49,7 @@ public class ContentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@Valid @RequestBody Content content) {
-        repository.create(content);
+        contentCollectionRepository.create(content);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -57,18 +58,18 @@ public class ContentController {
             @RequestBody Content content,
             @PathVariable Integer id) {
 
-        if(!repository.existsById(id)) {
+        if(!contentCollectionRepository.existsById(id)) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND,
                     "content not found."
             );
         }
-        repository.update(content, id);
+        contentCollectionRepository.update(content, id);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repository.delete(id);
+        contentCollectionRepository.delete(id);
     }
 }
