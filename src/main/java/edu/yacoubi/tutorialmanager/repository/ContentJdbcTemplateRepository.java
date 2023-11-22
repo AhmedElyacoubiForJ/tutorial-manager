@@ -57,7 +57,18 @@ public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
 
     @Override
     public void create(Content content) {
-
+        jdbcTemplate.update(
+                "insert into Content(id, title, description, status, tutorial_type, it_layer_type, date_created, date_updated, url) values(?,?,?,?,?,?,?,?,?)",
+                content.getId(),
+                content.getTitle(),
+                content.getDescription(),
+                content.getStatus().toString(),
+                content.getContentTutorialType().toString(),
+                content.getItLayerType().toString(),
+                content.getDateCreated(),
+                content.getDateUpdated(),
+                content.getUrl()
+        );
     }
 
     @Override

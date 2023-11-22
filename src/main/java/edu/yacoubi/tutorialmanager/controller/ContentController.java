@@ -49,7 +49,9 @@ public class ContentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@Valid @RequestBody Content content) {
-        contentCollectionRepository.create(content);
+
+        //contentCollectionRepository.create(content);
+        contentJdbcTemplateRepository.create(content);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
