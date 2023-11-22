@@ -60,18 +60,21 @@ public class ContentController {
             @RequestBody Content content,
             @PathVariable Integer id) {
 
-        if(!contentCollectionRepository.existsById(id)) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
-                    "content not found."
-            );
-        }
-        contentCollectionRepository.update(content, id);
+//        if(!contentCollectionRepository.existsById(id)) {
+//            throw new ResponseStatusException(
+//                    HttpStatus.NOT_FOUND,
+//                    "content not found."
+//            );
+//        }
+//        contentCollectionRepository.update(content, id);
+        contentJdbcTemplateRepository.update(content, id);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        contentCollectionRepository.delete(id);
+
+        //contentCollectionRepository.delete(id);
+        contentJdbcTemplateRepository.delete(id);
     }
 }

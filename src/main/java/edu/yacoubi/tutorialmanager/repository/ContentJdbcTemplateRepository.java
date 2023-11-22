@@ -1,14 +1,9 @@
 package edu.yacoubi.tutorialmanager.repository;
 
 import edu.yacoubi.tutorialmanager.model.Content;
-import edu.yacoubi.tutorialmanager.model.ItLayerType;
-import edu.yacoubi.tutorialmanager.model.Status;
-import edu.yacoubi.tutorialmanager.model.TutorialType;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,11 +80,24 @@ public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
 
     @Override
     public void update(Content content, Integer id) {
-
+        jdbcTemplate.update(
+                "update Content set title=?, description=?, status=?, tutorial_type=?, it_layer_type=?, date_created=?, date_updated=?, url=? where id =" + id,
+                content.getTitle(),
+                content.getDescription(),
+                content.getStatus().toString(),
+                content.getContentTutorialType().toString(),
+                content.getItLayerType().toString(),
+                content.getDateCreated(),
+                content.getDateUpdated(),
+                content.getUrl()
+        );
     }
 
     @Override
     public void delete(Integer id) {
-
+        jdbcTemplate.update(
+                "delete Content where id = ?",
+                id
+        );
     }
 }
