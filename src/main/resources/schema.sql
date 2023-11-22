@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS Content (
     url VARCHAR(255)
 );
 
-insert into Content(title,description,status, tutorial_type, it_layer_type, date_created)
-VALUES ('Spring Boot','jdbc','IDEA', 'VIDEO', 'BACK_END', CURRENT_TIMESTAMP);
+--insert into Content(title,description,status, tutorial_type, it_layer_type, date_created)
+--VALUES ('some','jdbc','IDEA', 'VIDEO', 'BACK_END', CURRENT_TIMESTAMP);

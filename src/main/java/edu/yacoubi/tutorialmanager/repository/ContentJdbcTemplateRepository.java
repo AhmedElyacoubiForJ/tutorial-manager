@@ -2,12 +2,11 @@ package edu.yacoubi.tutorialmanager.repository;
 
 import edu.yacoubi.tutorialmanager.model.Content;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+//@Repository
 public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
 
     private final JdbcTemplate jdbcTemplate;
@@ -51,14 +50,14 @@ public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
     }
 
     @Override
-    public void create(Content content) {
+    public void save(Content content) {
         jdbcTemplate.update(
                 "insert into Content(id, title, description, status, tutorial_type, it_layer_type, date_created, date_updated, url) values(?,?,?,?,?,?,?,?,?)",
                 content.getId(),
                 content.getTitle(),
                 content.getDescription(),
                 content.getStatus().toString(),
-                content.getContentTutorialType().toString(),
+                content.getTutorialType().toString(),
                 content.getItLayerType().toString(),
                 content.getDateCreated(),
                 content.getDateUpdated(),
@@ -90,7 +89,7 @@ public class ContentJdbcTemplateRepository implements DAO<Content, Integer> {
                 content.getTitle(),
                 content.getDescription(),
                 content.getStatus().toString(),
-                content.getContentTutorialType().toString(),
+                content.getTutorialType().toString(),
                 content.getItLayerType().toString(),
                 content.getDateCreated(),
                 content.getDateUpdated(),

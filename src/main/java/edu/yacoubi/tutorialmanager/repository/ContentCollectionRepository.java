@@ -26,7 +26,7 @@ public class ContentCollectionRepository implements DAO<Content, Integer>{
     }
 
     @Override
-    public void create(Content content) {
+    public void save(Content content) {
         contents.add(content);
     }
 
@@ -64,7 +64,8 @@ public class ContentCollectionRepository implements DAO<Content, Integer>{
                 ItLayerType.BACK_END,
                 LocalDateTime.now(),
                 null,
-                "https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s");
+                "https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s"
+        );
         contents.add(content);
     }
 }

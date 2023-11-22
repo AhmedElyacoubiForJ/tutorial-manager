@@ -1,15 +1,17 @@
 package edu.yacoubi.tutorialmanager.model;
 
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
 public final class Content {
+        @Id
         private Integer id;
         private @NotBlank String title;
         private String description;
         private Status status;
-        private TutorialType contentTutorialType;
+        private TutorialType tutorialType;
         private ItLayerType itLayerType;
         private LocalDateTime dateCreated;
         private LocalDateTime dateUpdated;
@@ -24,7 +26,7 @@ public final class Content {
                 String title,
                 String description,
                 Status status,
-                TutorialType contentTutorialType,
+                TutorialType tutorialType,
                 ItLayerType itLayerType,
                 LocalDateTime dateCreated,
                 LocalDateTime dateUpdated,
@@ -34,7 +36,7 @@ public final class Content {
                 this.title = title;
                 this.description = description;
                 this.status = status;
-                this.contentTutorialType = contentTutorialType;
+                this.tutorialType = tutorialType;
                 this.itLayerType = itLayerType;
                 this.dateCreated = dateCreated;
                 this.dateUpdated = dateUpdated;
@@ -57,8 +59,8 @@ public final class Content {
                 return status;
         }
 
-        public TutorialType getContentTutorialType() {
-                return contentTutorialType;
+        public TutorialType getTutorialType() {
+                return tutorialType;
         }
 
         public ItLayerType getItLayerType() {
@@ -93,8 +95,8 @@ public final class Content {
                 this.status = status;
         }
 
-        public void setContentTutorialType(TutorialType contentTutorialType) {
-                this.contentTutorialType = contentTutorialType;
+        public void setTutorialType(TutorialType tutorialType) {
+                this.tutorialType = tutorialType;
         }
 
         public void setItLayerType(ItLayerType itLayerType) {
@@ -120,7 +122,7 @@ public final class Content {
                         ", title='" + title + '\'' +
                         ", description='" + description + '\'' +
                         ", status=" + status +
-                        ", contentTutorialType=" + contentTutorialType +
+                        ", contentTutorialType=" + tutorialType +
                         ", itLayerType=" + itLayerType +
                         ", dateCreated=" + dateCreated +
                         ", dateUpdated=" + dateUpdated +

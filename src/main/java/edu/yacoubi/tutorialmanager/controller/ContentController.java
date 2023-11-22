@@ -1,6 +1,7 @@
 package edu.yacoubi.tutorialmanager.controller;
 
 import edu.yacoubi.tutorialmanager.model.Content;
+import edu.yacoubi.tutorialmanager.repository.ContentRepository;
 import edu.yacoubi.tutorialmanager.repository.DAO;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -14,12 +15,16 @@ import java.util.Optional;
 @RequestMapping("api/contents")
 // TODO create, read, update and delete | filter, paging and sorting
 public class ContentController {
-    private final DAO<Content, Integer> repository;
+    //private final DAO<Content, Integer> repository;
+    //public ContentController(DAO<Content, Integer> repository) {
+    //this.repository = repository;
+    //}
 
-    public ContentController(DAO<Content, Integer> repository) {
+    private final ContentRepository repository;
+
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
-
 
     @GetMapping("")
     public List<Content> getAll() {
@@ -43,7 +48,7 @@ public class ContentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@Valid @RequestBody Content content) {
-        repository.create(content);
+        repository.save(content);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -58,12 +63,22 @@ public class ContentController {
                     "content not found."
             );
         }
-        repository.update(content, id);
+        //repository.update(content, id); // DAO impl.
+        repository.save(content);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repository.delete(id);
+        //repository.delete(id); // DAO impl.
+        Content content = new Content();
+        content.setId(id);
+        repository.delete(content);
+    }
+
+    @GetMapping("/filter/{keyword}")
+    List<Content> findByTitle(@PathVariable String keyword) {
+        return repository.findByTitleContainingIgnoreCase(keyword);
+        //return repository.findByTitleContaining(keyword);
     }
 }
