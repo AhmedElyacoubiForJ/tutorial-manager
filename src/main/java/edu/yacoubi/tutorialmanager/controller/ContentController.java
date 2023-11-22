@@ -1,6 +1,7 @@
 package edu.yacoubi.tutorialmanager.controller;
 
 import edu.yacoubi.tutorialmanager.model.Content;
+import edu.yacoubi.tutorialmanager.model.Status;
 import edu.yacoubi.tutorialmanager.repository.ContentRepository;
 import edu.yacoubi.tutorialmanager.repository.DAO;
 import jakarta.validation.Valid;
@@ -80,5 +81,11 @@ public class ContentController {
     List<Content> findByTitle(@PathVariable String keyword) {
         return repository.findByTitleContainingIgnoreCase(keyword);
         //return repository.findByTitleContaining(keyword);
+    }
+
+    @GetMapping("/filter/status/{status}")
+    List<Content> findByStatus(@PathVariable Status status) {
+        //return repository.findByStatus(status);
+        return repository.listByStatus(status);
     }
 }
