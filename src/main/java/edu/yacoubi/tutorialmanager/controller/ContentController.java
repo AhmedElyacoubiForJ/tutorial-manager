@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/contents")
+// @CrossOrigin for vue later
 // TODO create, read, update and delete | filter, paging and sorting
 public class ContentController {
 
