@@ -2,6 +2,7 @@ package edu.yacoubi.tutorialmanager.controller;
 
 import edu.yacoubi.tutorialmanager.model.Content;
 import edu.yacoubi.tutorialmanager.repository.ContentCollectionRepository;
+import edu.yacoubi.tutorialmanager.repository.ContentJdbcTemplateRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,14 +17,18 @@ import java.util.Optional;
 public class ContentController {
 
     private final ContentCollectionRepository repository;
+    private final ContentJdbcTemplateRepository contentJdbcTemplateRepository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentCollectionRepository repository,
+                             ContentJdbcTemplateRepository contentJdbcTemplateRepository) {
         this.repository = repository;
+        this.contentJdbcTemplateRepository = contentJdbcTemplateRepository;
     }
 
     @GetMapping("")
     public List<Content> getAll() {
-        return repository.findAll();
+        return contentJdbcTemplateRepository.findAll();
+        //return repository.findAll();
     }
 
     @GetMapping("/{id}")

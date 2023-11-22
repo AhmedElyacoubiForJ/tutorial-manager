@@ -13,35 +13,44 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ContentCollectionRepository implements DAO<Content>{
+public class ContentCollectionRepository implements DAO<Content, Integer>{
 
     private final List<Content> contents = new ArrayList<>();
 
     public ContentCollectionRepository() {
     }
 
+    @Override
     public List<Content> findAll() {
         return contents;
     }
 
-    public Optional<Content> findById(Integer id) {
-        return contents.stream()
-                .filter(c -> c.id().equals(id))
-                .findFirst();
-    }
-
-    public void update(Content content, Integer id) {
-        contents.removeIf(c -> c.id().equals(content.id()));
-        contents.add(content);
-    }
-
+    @Override
     public void create(Content content) {
         contents.add(content);
     }
 
+    @Override
+    public void update(Content content, Integer id) {
+        contents.removeIf(c -> c.getId().equals(content.getId()));
+        contents.add(content);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        contents.removeIf(c -> c.getId().equals(id));
+    }
+
+    @Override
+    public Optional<Content> findById(Integer id) {
+        return contents.stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst();
+    }
+
     public boolean existsById(Integer id) {
         return contents.stream()
-                .filter(c -> c.id().equals(id)).count() == 1;
+                .filter(c -> c.getId().equals(id)).count() == 1;
     }
 
     @PostConstruct
@@ -57,9 +66,5 @@ public class ContentCollectionRepository implements DAO<Content>{
                 null,
                 "https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s");
         contents.add(content);
-    }
-
-    public void delete(Integer id) {
-        contents.removeIf(c -> c.id().equals(id));
     }
 }

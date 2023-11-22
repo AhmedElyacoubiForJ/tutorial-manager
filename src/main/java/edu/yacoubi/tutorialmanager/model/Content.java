@@ -4,16 +4,127 @@ import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
 
-public record Content(
-        Integer id,
-        @NotBlank
-        String title,
-        String description,
-        Status status,
-        TutorialType contentTutorialType,
-        ItLayerType itLayerType,
-        LocalDateTime dateCreated,
-        LocalDateTime dateUpdated,
-        String url
-) {
+public final class Content {
+        private Integer id;
+        private @NotBlank String title;
+        private String description;
+        private Status status;
+        private TutorialType contentTutorialType;
+        private ItLayerType itLayerType;
+        private LocalDateTime dateCreated;
+        private LocalDateTime dateUpdated;
+        private String url;
+
+        public Content() {
+        }
+
+        public Content(
+                Integer id,
+                @NotBlank
+                String title,
+                String description,
+                Status status,
+                TutorialType contentTutorialType,
+                ItLayerType itLayerType,
+                LocalDateTime dateCreated,
+                LocalDateTime dateUpdated,
+                String url
+        ) {
+                this.id = id;
+                this.title = title;
+                this.description = description;
+                this.status = status;
+                this.contentTutorialType = contentTutorialType;
+                this.itLayerType = itLayerType;
+                this.dateCreated = dateCreated;
+                this.dateUpdated = dateUpdated;
+                this.url = url;
+        }
+
+        public Integer getId() {
+                return id;
+        }
+
+        public String getTitle() {
+                return title;
+        }
+
+        public String getDescription() {
+                return description;
+        }
+
+        public Status getStatus() {
+                return status;
+        }
+
+        public TutorialType getContentTutorialType() {
+                return contentTutorialType;
+        }
+
+        public ItLayerType getItLayerType() {
+                return itLayerType;
+        }
+
+        public LocalDateTime getDateCreated() {
+                return dateCreated;
+        }
+
+        public LocalDateTime getDateUpdated() {
+                return dateUpdated;
+        }
+
+        public String getUrl() {
+                return url;
+        }
+
+        public void setId(Integer id) {
+                this.id = id;
+        }
+
+        public void setTitle(String title) {
+                this.title = title;
+        }
+
+        public void setDescription(String description) {
+                this.description = description;
+        }
+
+        public void setStatus(Status status) {
+                this.status = status;
+        }
+
+        public void setContentTutorialType(TutorialType contentTutorialType) {
+                this.contentTutorialType = contentTutorialType;
+        }
+
+        public void setItLayerType(ItLayerType itLayerType) {
+                this.itLayerType = itLayerType;
+        }
+
+        public void setDateCreated(LocalDateTime dateCreated) {
+                this.dateCreated = dateCreated;
+        }
+
+        public void setDateUpdated(LocalDateTime dateUpdated) {
+                this.dateUpdated = dateUpdated;
+        }
+
+        public void setUrl(String url) {
+                this.url = url;
+        }
+
+        @Override
+        public String toString() {
+                return "Content{" +
+                        "id=" + id +
+                        ", title='" + title + '\'' +
+                        ", description='" + description + '\'' +
+                        ", status=" + status +
+                        ", contentTutorialType=" + contentTutorialType +
+                        ", itLayerType=" + itLayerType +
+                        ", dateCreated=" + dateCreated +
+                        ", dateUpdated=" + dateUpdated +
+                        ", url='" + url + '\'' +
+                        '}';
+        }
 }
