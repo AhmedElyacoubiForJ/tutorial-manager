@@ -32,35 +32,35 @@ public class Application {
 
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(ContentRepository repository) {
-		return args -> {
-			System.out.println("hello Application commandLineRunner");
-			Content content = new Content(
-					null,
-					"Spring Boot Rest API",
-					"simple repo, jdbc template, ListCrudRepository",
-					Status.IN_PROGRESS,
-					TutorialType.VIDEO,
-					ItLayerType.BACK_END,
-					LocalDateTime.now(),
-					null,
-					"https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s"
-			);
-			repository.save(content);
-			//
-			content = new Content(
-					null,
-					"Spring Boot Data",
-					"ListCrudRepository",
-					Status.IDEA,
-					TutorialType.VIDEO,
-					ItLayerType.BACK_END,
-					LocalDateTime.now(),
-					null,
-					""
-			);
-			repository.save(content);
-		};
-	}
+//	@Bean
+//	CommandLineRunner commandLineRunner(ContentRepository repository) {
+//		return args -> {
+//			System.out.println("hello Application commandLineRunner");
+//			Content content = new Content(
+//					null,
+//					"Spring Boot Rest API",
+//					"simple repo, jdbc template, ListCrudRepository",
+//					Status.IN_PROGRESS,
+//					TutorialType.VIDEO,
+//					ItLayerType.BACK_END,
+//					LocalDateTime.now(),
+//					null,
+//					"https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s"
+//			);
+//			repository.save(content);
+//			//
+//			content = new Content(
+//					null,
+//					"Spring Boot Data",
+//					"ListCrudRepository",
+//					Status.IDEA,
+//					TutorialType.VIDEO,
+//					ItLayerType.BACK_END,
+//					LocalDateTime.now(),
+//					null,
+//					""
+//			);
+//			repository.save(content);
+//		};
+//	}
 }
