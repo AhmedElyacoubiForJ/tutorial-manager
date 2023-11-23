@@ -1,12 +1,14 @@
 package edu.yacoubi.tutorialmanager.config;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
-//@Controller
+@Profile("!dev")
+@Component
 public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello DataLoader Controller");
+        System.out.println("Hello DataLoader Controller \uD83D\uDC4F");
     }
 }
