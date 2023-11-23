@@ -19,5 +19,4 @@ public interface ContentRepository extends ListCrudRepository<Content,Integer> {
     List<Content> listByStatus(@Param("status") Status status);
     // is like listByStatus
     List<Content> findByStatus(Status status);
-
 }

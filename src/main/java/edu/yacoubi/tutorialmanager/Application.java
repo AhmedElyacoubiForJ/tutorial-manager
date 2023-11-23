@@ -1,5 +1,6 @@
 package edu.yacoubi.tutorialmanager;
 
+import edu.yacoubi.tutorialmanager.config.ContentTutorialProperties;
 import edu.yacoubi.tutorialmanager.model.Content;
 import edu.yacoubi.tutorialmanager.model.ItLayerType;
 import edu.yacoubi.tutorialmanager.model.Status;
@@ -8,11 +9,13 @@ import edu.yacoubi.tutorialmanager.repository.ContentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDateTime;
 
+@EnableConfigurationProperties(ContentTutorialProperties.class)
 @SpringBootApplication
 public class Application {
 

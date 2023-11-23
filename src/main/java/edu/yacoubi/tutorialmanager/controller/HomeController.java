@@ -1,19 +1,17 @@
 package edu.yacoubi.tutorialmanager.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import edu.yacoubi.tutorialmanager.config.ContentTutorialProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 @RestController
 public class HomeController {
 
-    @Value("${tm.welcome.message: Spring \uD83E\uDD7E, default welcome message.}")
+ /*   @Value("${ct.welcome.message: Spring \uD83E\uDD7E, default welcome message.}")
     private String welcomeMessage;
 
-    @Value("${tm.about: keep in progress.}")
-    private String about;
+    @Value("${ct.about: keep in progress.}")
+    private String about;*/
 
 //    @GetMapping("/")
 //    public String home() {
@@ -21,12 +19,23 @@ public class HomeController {
 //        return  welcomeMessage;
 //    }
 
+//    @GetMapping("/")
+//    public Map<String,String> home() {
+//        // output as json
+//        return  Map.of(
+//                "welcomeMessage",welcomeMessage,
+//                "about", about
+//        );
+//    }
+
+    private final ContentTutorialProperties contentTutorialProperties;
+
+    public HomeController(ContentTutorialProperties contentTutorialProperties) {
+        this.contentTutorialProperties = contentTutorialProperties;
+    }
+
     @GetMapping("/")
-    public Map<String,String> home2() {
-        // output as json
-        return  Map.of(
-                "welcomeMessage",welcomeMessage,
-                "about", about
-        );
+    public ContentTutorialProperties home() {
+        return contentTutorialProperties;
     }
 }
