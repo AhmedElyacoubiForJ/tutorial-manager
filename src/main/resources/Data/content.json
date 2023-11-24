@@ -1,4 +1,14 @@
-[
+[ {
+  "id": null,
+  "title": "Spring Boot Tutorial for Beginners - 2023 Crash Course using Spring Boot 3",
+  "description": "Education Reference",
+  "status": "IN_PROGRESS",
+  "tutorialType": "VIDEO",
+  "itLayerType": "BACK_END",
+  "dateCreated": "2023-11-24T00:00:00.000000",
+  "dateUpdated": null,
+  "url": "https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s"
+  },
   {
     "id": null,
     "title": "Easily Implement UUIDs as Primary Keys in Spring Boot 3",
