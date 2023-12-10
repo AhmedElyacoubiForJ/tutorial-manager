@@ -16,9 +16,33 @@ public final class Content {
         private LocalDateTime dateCreated;
         private LocalDateTime dateUpdated;
         private String url;
+        private String gitHubUrl;
 
         public Content() {
         }
+
+//        public Content(
+//                Integer id,
+//                @NotBlank
+//                String title,
+//                String description,
+//                Status status,
+//                TutorialType tutorialType,
+//                ItLayerType itLayerType,
+//                LocalDateTime dateCreated,
+//                LocalDateTime dateUpdated,
+//                String url
+//        ) {
+//                this.id = id;
+//                this.title = title;
+//                this.description = description;
+//                this.status = status;
+//                this.tutorialType = tutorialType;
+//                this.itLayerType = itLayerType;
+//                this.dateCreated = dateCreated;
+//                this.dateUpdated = dateUpdated;
+//                this.url = url;
+//        }
 
         public Content(
                 Integer id,
@@ -30,7 +54,8 @@ public final class Content {
                 ItLayerType itLayerType,
                 LocalDateTime dateCreated,
                 LocalDateTime dateUpdated,
-                String url
+                String url,
+                String gitHubUrl
         ) {
                 this.id = id;
                 this.title = title;
@@ -41,6 +66,7 @@ public final class Content {
                 this.dateCreated = dateCreated;
                 this.dateUpdated = dateUpdated;
                 this.url = url;
+                this.gitHubUrl = gitHubUrl;
         }
 
         public Integer getId() {
@@ -115,6 +141,14 @@ public final class Content {
                 this.url = url;
         }
 
+        public String getGitHubUrl() {
+                return gitHubUrl;
+        }
+
+        public void setGitHubUrl(String gitHubUrl) {
+                this.gitHubUrl = gitHubUrl;
+        }
+
         @Override
         public String toString() {
                 return "Content{" +
@@ -122,11 +156,12 @@ public final class Content {
                         ", title='" + title + '\'' +
                         ", description='" + description + '\'' +
                         ", status=" + status +
-                        ", contentTutorialType=" + tutorialType +
+                        ", tutorialType=" + tutorialType +
                         ", itLayerType=" + itLayerType +
                         ", dateCreated=" + dateCreated +
                         ", dateUpdated=" + dateUpdated +
                         ", url='" + url + '\'' +
+                        ", gitHubUrl='" + gitHubUrl + '\'' +
                         '}';
         }
 }

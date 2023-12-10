@@ -26,6 +26,7 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        repository.deleteAll();
         if(repository.count() == 0) {
             try (InputStream inputStream = TypeReference.class
                     .getResourceAsStream("/data/content.json")) {

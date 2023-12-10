@@ -1,89 +1,36 @@
-[ {
+[{
   "id": null,
-  "title": "Spring Boot Tutorial for Beginners - 2023 Crash Course using Spring Boot 3",
-  "description": "Education Reference",
-  "status": "IN_PROGRESS",
-  "tutorialType": "VIDEO",
+  "title": "Spring Data JPA Master Class, Learn everything you need to build solid backend applications.",
+  "description": "Getting Started with Spring Data JPA, Repositories, Querying Data, Sorting and Pagination, One to One Relationships, One to Many Relationships, Many to Many Relationships, Transactions.",
+  "status": "PUBLISHED_AND_CERTIFIED",
+  "tutorialType": "COURSE",
   "itLayerType": "BACK_END",
-  "dateCreated": "2023-11-24T00:00:00.000000",
+  "dateCreated": "2023-12-04T00:00:00.000000",
   "dateUpdated": null,
-  "url": "https://www.youtube.com/watch?v=UgX5lgv4uVM&t=3694s"
+  "url": "https://app.amigoscode.com/p/spring-data-jpa",
+  "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/springdatajpamasterclass"
+},{
+    "id": null,
+    "title": "Spring Boot Master Class",
+    "description": "Getting Started, Structuring Your Applications, Dependency Injection, Beans, JSON with Jackson Fasterxml, Building APIs with Spring MVC, Java Bean Validation, Exception Handling, Spring Data & Databases, Open Feign Rest Client, Logging, Spring Boot Actuator and Metrics, Application Properties and Profiles, Packaging and Running Applications, Testing, Lombok.",
+    "status": "PUBLISHED_AND_CERTIFIED",
+    "tutorialType": "COURSE",
+    "itLayerType": "BACK_END",
+    "dateCreated": "2023-12-04T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://app.amigoscode.com/p/spring-boot-master-class",
+    "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/springbootmasterclass"
   },
   {
     "id": null,
-    "title": "Easily Implement UUIDs as Primary Keys in Spring Boot 3",
-    "description": "In this tutorial you will learn how to use one of the new features in Jakarta EE 10 in a Spring Boot 3 application.",
-    "status": "PUBLISHED",
-    "tutorialType": "VIDEO",
-    "itLayerType": "FRONT_END",
-    "dateCreated": "2023-01-27T00:00:00.000000",
+    "title": "Software Testing. Learn how to properly Unit and Integration Test",
+    "description": "Getting Started, Unit testing SQL and JPA Queries, Testing Customer Registration Feature, Payment Feature and Tests, Stripe Integration, Integration Testing, Test Driven Development",
+    "status": "PUBLISHED_AND_CERTIFIED",
+    "tutorialType": "COURSE",
+    "itLayerType": "BACK_END",
+    "dateCreated": "2023-12-04T00:00:00.000000",
     "dateUpdated": null,
-    "url": "https://www.danvega.dev/blog/2023/01/27/jakarta-ee-10-uuid/"
-  },
-  {
-    "id": null,
-    "title": "Spring Boot JWT - How to Secure your REST APIs with Spring Security and Json Web Tokens",
-    "description": "In this tutorial, you will learn how to secure REST APIs with Spring Security and Json Web Tokens.",
-    "status": "PUBLISHED",
-    "tutorialType": "ARTICLE",
-    "itLayerType": "FRONT_END",
-    "dateCreated": "2022-09-06T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://www.danvega.dev/blog/2022/09/06/spring-security-jwt/"
-  },
-  {
-    "id": null,
-    "title": "GraphQL Spring Boot - Up and Running with Spring for GraphQL",
-    "description": "In this tutorial you are going to learn how to get up and running with Spring for GraphQL.",
-    "status": "PUBLISHED",
-    "tutorialType": "ARTICLE",
-    "itLayerType": "FRONT_END",
-    "dateCreated": "2022-05-17T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://www.danvega.dev/blog/2022/05/17/spring-for-graphql/"
-  },
-  {
-    "id": null,
-    "title": "Can Chat GPT Build a Spring Boot Application",
-    "description": "In this video, we'll investigate whether it is possible to use Chat GPT to write a Spring Boot application.",
-    "status": "PUBLISHED",
-    "tutorialType": "VIDEO",
-    "itLayerType": "FRONT_END",
-    "dateCreated": "2023-02-14T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://youtu.be/CXbXoMIVpRg"
-  },
-  {
-    "id": null,
-    "title": "Building Native Images in Java with GraalVM",
-    "description": "In this tutorial, we will explore the exciting and powerful process of creating native executables in Java using GraalVM.",
-    "status": "PUBLISHED",
-    "tutorialType": "VIDEO",
-    "itLayerType": "NONE",
-    "dateCreated": "2023-02-03T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://youtu.be/Rk4zfvVvRks"
-  },
-  {
-    "id": null,
-    "title": "My IntelliJ Setup",
-    "description": "In this video, I am going to walk you through my IntelliJ IDEA Setup for 2023. \n",
-    "status": "PUBLISHED",
-    "tutorialType": "VIDEO",
-    "itLayerType": "NONE",
-    "dateCreated": "2023-02-01T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://youtu.be/g78is10FjF0"
-  },
-  {
-    "id": null,
-    "title": "Fetching site above tutorials",
-    "description": "start point will be s. url\n",
-    "status": "IDEA",
-    "tutorialType": "VIDEO",
-    "itLayerType": "NONE",
-    "dateCreated": "2023-11-23T00:00:00.000000",
-    "dateUpdated": null,
-    "url": "https://github.com/danvega/content-calendar/blob/main/docs/resources.md"
+    "url": "https://app.amigoscode.com/p/software-testing",
+    "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/softwaretesting"
   }
 ]

@@ -22,7 +22,8 @@ public class ContentRowMapper implements RowMapper<Content> {
                 ItLayerType.valueOf(rs.getString("it_layer_type")),
                 rs.getObject("date_created", LocalDateTime.class),
                 rs.getObject("date_updated",LocalDateTime.class),
-                rs.getString("url")
+                rs.getString("url"),
+                rs.getString("git_hub_url")
         );
     }
 }

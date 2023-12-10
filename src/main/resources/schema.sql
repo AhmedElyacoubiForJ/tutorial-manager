@@ -2,12 +2,13 @@ CREATE TABLE IF NOT EXISTS Content (
     id SERIAL PRIMARY KEY ,
     title varchar(255) NOT NULL,
     description text,
-    status VARCHAR(20) NOT NULL,
+    status VARCHAR(50) NOT NULL,
     tutorial_type VARCHAR(50) NOT NULL,
     it_layer_type VARCHAR(50) NOT NULL,
     date_created TIMESTAMP NOT NULL,
     date_updated TIMESTAMP,
-    url VARCHAR(255)
+    url VARCHAR(255),
+    git_hub_url VARCHAR(255)
 );
 
 --insert into Content(title,description,status, tutorial_type, it_layer_type, date_created)
