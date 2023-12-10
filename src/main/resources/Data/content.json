@@ -5,7 +5,7 @@
   "status": "PUBLISHED_AND_CERTIFIED",
   "tutorialType": "COURSE",
   "itLayerType": "BACK_END",
-  "dateCreated": "2023-12-04T00:00:00.000000",
+  "dateCreated": "2023-10-03T00:00:00.000000",
   "dateUpdated": null,
   "url": "https://app.amigoscode.com/p/spring-data-jpa",
   "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/springdatajpamasterclass"
@@ -16,7 +16,7 @@
     "status": "PUBLISHED_AND_CERTIFIED",
     "tutorialType": "COURSE",
     "itLayerType": "BACK_END",
-    "dateCreated": "2023-12-04T00:00:00.000000",
+    "dateCreated": "2023-09-28T00:00:00.000000",
     "dateUpdated": null,
     "url": "https://app.amigoscode.com/p/spring-boot-master-class",
     "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/springbootmasterclass"
@@ -28,9 +28,33 @@
     "status": "PUBLISHED_AND_CERTIFIED",
     "tutorialType": "COURSE",
     "itLayerType": "BACK_END",
-    "dateCreated": "2023-12-04T00:00:00.000000",
+    "dateCreated": "2023-09-15T00:00:00.000000",
     "dateUpdated": null,
     "url": "https://app.amigoscode.com/p/software-testing",
     "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/softwaretesting"
+  },
+  {
+    "id": null,
+    "title": "Spring Boot For Beginners, Learn how to build modern web applications with Spring Boot.",
+    "description": "Getting started, Databases and Spring Data JPA, CRUD API, Exercise.",
+    "status": "PUBLISHED_AND_CERTIFIED",
+    "tutorialType": "COURSE",
+    "itLayerType": "BACK_END",
+    "dateCreated": "2023-07-26T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://app.amigoscode.com/p/spring-boot",
+    "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/springbootexample"
+  },
+  {
+    "id": null,
+    "title": "Kotlin for Beginners",
+    "description": "Getting Started, The Basics Of Kotlin, Conditionals, Arrays and Lists, Loops, Functions, Classes and Objects.",
+    "status": "PUBLISHED_AND_CERTIFIED",
+    "tutorialType": "COURSE",
+    "itLayerType": "PROGRAMMING_LANGUAGE_ONLY",
+    "dateCreated": "2023-07-19T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://app.amigoscode.com/p/learn-kotlin",
+    "gitHubUrl": "https://github.com/AhmedElyacoubiForJ/kotlin"
   }
 ]
